@@ -63,15 +63,15 @@ PPS(퍼플 페이먼트 시스템)는 다음과 같은 API를 제공합니다:
      }
      ```
 
-2. **출금 상태 조회 API**
-   - 엔드포인트: `GET /api/withdrawal/status`
-   - 설명: 특정 출금 요청의 상태를 조회합니다.
-   - 파라미터 (두 가지 중 하나만 사용):
-     - `transaction_id`: 출금 요청 시 받은 트랜잭션 ID
+2. **트랜잭션 상태 조회 API**
+   - 엔드포인트: `GET /api/transaction/status`
+   - 설명: 특정 트랜잭션(출금/입금)의 상태를 조회합니다.
+   - 파라미터 (두 가지 중 하나는 필수):
+     - `transaction_id`: 트랜잭션 ID
      - `tx_hash`: 블록체인 트랜잭션 해시
    - 예시: 
-     - `GET /api/withdrawal/status?transaction_id=1234-5678-90ab-cdef`
-     - `GET /api/withdrawal/status?tx_hash=0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef`
+     - `GET /api/transaction/status?transaction_id=1234-5678-90ab-cdef`
+     - `GET /api/transaction/status?tx_hash=0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef`
    - 응답 예시:
      ```json
      {
